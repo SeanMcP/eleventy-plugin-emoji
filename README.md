@@ -33,17 +33,19 @@ And this is a filter (no label): {{ "🤟" | emoji }}
 
 ## How
 
-The shortcode and filter take an emoji (and optional symbol for the shortcode) and wrap it with a containing element with the appropriate accessibility attributes.
+The shortcode and filter take an emoji and optional label (shortcode only) and wrap it in a containing element with the appropriate accessibility attributes.
 
 For emoji shortcuts with a label, the default output is:
 
 ```html
+<!-- {% emoji "🐵", "monkey face" %} -->
 <span aria-label="monkey face" class="11ty-emoji" role="img">🐵</span>
 ```
 
 For emoji shortcuts without labels or filters, the default output is:
 
 ```html
+<!-- {% emoji "🙈" %} or {{ "🙈" | emoji }} -->
 <span aria-hidden="true" class="11ty-emoji" role="img">🙈</span>
 ```
 
@@ -70,7 +72,8 @@ eleventyConfig.addPlugin(require('eleventy-plugin-emoji'), {
 The output from the previous configuration would be:
 
 ```html
-<i aria-label="Settings gear" class="emoji" role="img">⚙️</i>
+<!-- {% emoji "⚙️", "settings gear" %} -->
+<i aria-label="settings gear" class="emoji" role="img">⚙️</i>
 ```
 
 ## License
