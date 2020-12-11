@@ -1,0 +1,4 @@
+node_modules/
+_site/
+# There are no real dependencies, so I'm going to ignoring this:
+package-lock.json

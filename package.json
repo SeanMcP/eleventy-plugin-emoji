@@ -1,0 +1,32 @@
+{
+  "name": "eleventy-plugin-emoji",
+  "version": "1.0.0",
+  "description": "An accessibly emoji shortcode and filter for Eleventy projects",
+  "main": "emoji.js",
+  "files": [
+    "emoji.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeanMcP/eleventy-plugin-emoji.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SeanMcP/eleventy-plugin-emoji/issues"
+  },
+  "homepage": "https://github.com/SeanMcP/eleventy-plugin-emoji#readme",
+  "scripts": {
+    "test": "eleventy --input=test.md"
+  },
+  "keywords": [
+    "emoji",
+    "accessible",
+    "a11y",
+    "eleventy",
+    "11ty"
+  ],
+  "author": "Sean McPherson <sean@seanmcp.com> (https://seanmcp.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1"
+  }
+}
