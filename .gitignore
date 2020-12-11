@@ -1,4 +1,5 @@
 node_modules/
 _site/
+.DS_Store
 # There are no real dependencies, so I'm going to ignoring this:
 package-lock.json
