@@ -23,6 +23,7 @@
     "accessible",
     "a11y",
     "eleventy",
+    "eleventy-plugin",
     "11ty"
   ],
   "author": "Sean McPherson <sean@seanmcp.com> (https://seanmcp.com)",
