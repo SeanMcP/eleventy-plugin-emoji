@@ -6,11 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2021-01-30
+
 ### Added
-- Filter support for emoji label
+- Filter support for emoji label (@seanmcp in [#4])
 
 ### Changed
-- Changed default class name from `11ty-emoji` to `eleventy-emoji`
+- Changed default class name from `11ty-emoji` to `eleventy-emoji` (@seanmcp in [#4])
 
 ## [1.0.0] - 2020-12-11
 ### Added
