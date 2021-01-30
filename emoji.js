@@ -1,12 +1,13 @@
 module.exports = function eleventyPluginEmoji(eleventyConfig, options = {}) {
   const element = options.element || "span";
-  const className = options.className || "11ty-emoji";
+  const className = options.className || "eleventy-emoji";
 
-  eleventyConfig.addShortcode("emoji", function (symbol, label) {
-    return `<${element} ${label ? `aria-label="${label}"` : 'aria-hidden="true"'} class="${className}" role="img">${symbol}</${element}>`;
-  });
+  function emoji(symbol, label) {
+    return `<${element} ${
+      label ? `aria-label="${label}"` : 'aria-hidden="true"'
+    } class="${className}" role="img">${symbol}</${element}>`;
+  }
 
-  eleventyConfig.addFilter("emoji", function (symbol) {
-    return `<${element} aria-hidden="true" class="${className}" role="img">${symbol}</${element}>`;
-  });
+  eleventyConfig.addShortcode("emoji", emoji);
+  eleventyConfig.addFilter("emoji", emoji);
 };

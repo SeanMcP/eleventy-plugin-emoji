@@ -24,29 +24,38 @@ module.exports = function (eleventyConfig) {
 Finally, use the emoji shortcode or filter:
 
 ```md
-This is a shortcode with a label: {% emoji "☝️", "finger pointing to the sky" %}
+Shortcode with label: {% emoji "☝️", "finger pointing to the sky" %}
 
-This is a shortcode with no label: {% emoji "✌️" %}
+Shortcode without label: {% emoji "✌️" %}
 
-And this is a filter (no label): {{ "🤟" | emoji }}
+Filter with label: {{ "🤟" | emoji: "spider-man hand" }}
+
+Filter without label: {{ "🖐" | emoji }}
+```
+
+**Note**: These filter examples [use Liquid](https://shopify.dev/docs/themes/liquid/reference/filters), the default markdown rendering engine for Eleventy. If you are using Nunjucks, the [syntax is slightly different](https://mozilla.github.io/nunjucks/templating.html#filters):
+
+```md
+<!-- Nunjucks syntax for filter arguments -->
+{{ "✍️" | emoji("taking notes") }}
 ```
 
 ## How
 
-The shortcode and filter take an emoji and optional label (shortcode only) and wrap it in a containing element with the appropriate accessibility attributes.
+The shortcode and filter take an emoji and optional label, and wrap it in a containing element with the appropriate accessibility attributes.
 
-For emoji shortcuts with a label, the default output is:
+For emoji with a label, the default output is:
 
 ```html
-<!-- {% emoji "🐵", "monkey face" %} -->
-<span aria-label="monkey face" class="11ty-emoji" role="img">🐵</span>
+<!-- {% emoji "🐵", "monkey face" %} or {{ "🐵" | emoji: "monkey face" }} -->
+<span aria-label="monkey face" class="eleventy-emoji" role="img">🐵</span>
 ```
 
-For emoji shortcuts without labels or filters, the default output is:
+For emoji without labels, the default output is:
 
 ```html
 <!-- {% emoji "🙈" %} or {{ "🙈" | emoji }} -->
-<span aria-hidden="true" class="11ty-emoji" role="img">🙈</span>
+<span aria-hidden="true" class="eleventy-emoji" role="img">🙈</span>
 ```
 
 This follows the pattern recommended by [Léonie Watson](http://tink.uk/accessible-emoji/) and used by various accessibility validators.
@@ -55,18 +64,18 @@ This follows the pattern recommended by [Léonie Watson](http://tink.uk/accessib
 
 There are two options to configure `eleventy-plugin-emoji`:
 
-| Option      | Default      | Explanation                                 |
-| ----------- | ------------ | ------------------------------------------- |
-| `element`   | `span`       | The element that will wrap the emoji symbol |
-| `className` | `11ty-emoji` | A class applied to the wrapping element     |
+| Option      | Default          | Explanation                                 |
+| ----------- | ---------------- | ------------------------------------------- |
+| `element`   | `span`           | The element that will wrap the emoji symbol |
+| `className` | `eleventy-emoji` | A class applied to the wrapping element     |
 
 To configure the plugin, pass an object with the any of the above keys to Eleventy's `addPlugin()` function:
 
 ```js
-eleventyConfig.addPlugin(require('eleventy-plugin-emoji'), {
-    element: 'i',
-    className: 'emoji'
-})
+eleventyConfig.addPlugin(require("eleventy-plugin-emoji"), {
+  element: "i",
+  className: "emoji",
+});
 ```
 
 The output from the previous configuration would be:
@@ -78,4 +87,4 @@ The output from the previous configuration would be:
 
 ## License
 
-[MIT](./LICENSE)
+[MIT](./LICENSE) © [Sean McPherson](https://seanmcp.com)
