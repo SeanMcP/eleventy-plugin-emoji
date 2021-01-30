@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Filter support for emoji label (@seanmcp in [#4])
+- `eleventy-plugin` keyword to `package.json` (@pdehaan in [#2])
 
 ### Changed
 - Changed default class name from `11ty-emoji` to `eleventy-emoji` (@seanmcp in [#4])
