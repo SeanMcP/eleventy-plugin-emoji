@@ -1,6 +1,6 @@
 {
   "name": "eleventy-plugin-emoji",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "An accessibly emoji shortcode and filter for Eleventy projects",
   "main": "emoji.js",
   "files": [
